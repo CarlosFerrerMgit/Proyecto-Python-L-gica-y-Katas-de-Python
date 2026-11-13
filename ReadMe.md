@@ -6,43 +6,18 @@
 
 ## 📌 1. Descripción del Proyecto
 
-Este repositorio contiene la resolución limpia y optimizada de los 40 ejercicios prácticos (Katas 1 a 41, con salto del ejercicio 35 en el enunciado oficial de ThePower) diseñados para afianzar el razonamiento algorítmico y las capacidades técnicas del lenguaje Python.
+Este repositorio reúne la resolución de las **40 katas de Python** propuestas en el módulo, diseñadas para practicar desde las estructuras de datos básicas y el control de flujo hasta la programación funcional y la orientación a objetos.
 
-El proyecto demuestra el dominio de la sintaxis fundamental, estructuras de datos, programación funcional con funciones de orden superior (map, filter, reduce), manejo estructurado de excepciones y programación orientada a objetos (POO), cumpliendo de forma estricta los estándares de calidad y estilo de la industria (PEP 8).
+El objetivo no ha sido solo que los ejercicios funcionen, sino escribir código limpio, bien tipado, documentado con *docstrings* y preparado para controlar posibles errores de entrada o casos límite.
 
 ## 🛠️ 2. Metodología y Pasos Seguidos
 
-### A. Pasos Seguidos durante el Proyecto
+A lo largo del proyecto he dividido las soluciones tanto en un script unificado (`docs/katas_python.py`) como en un cuaderno interactivo para facilitar su lectura y prueba:
 
-* **Configuración del Entorno de Trabajo en VS Code:** Configuración del intérprete de Python y verificación del gestor de paquetes (`pip`).
-
-* **Instalación de extensiones clave:** `Python, Pylance, Jupyter, autoDocstring y Black Formatter`.
-
-* **Diseño y Testeo Iterativo:** Desarrollo y prueba celda a celda en un entorno interactivo tipo notebook (`katas_python.ipynb`), evaluando casos límite, listas vacías, divisiones por cero y argumentos no válidos.
-
-### B. Competencias Técnicas Demostradas en las Katas
-
-* **Tipos de Datos y Métodos Nativos de Cadena:**
-  * Uso de métodos de inspección y transformación de strings (`.lower()`, `.upper()`, `.split()`, `.replace()`, `.strip()`, `.startswith()`).
-  * Indexación y rebanado avanzado (*slicing*) para el enmascaramiento de datos sensibles conservando caracteres finales (`texto[-4:]`).
-* **Estructuras de Datos y Complejidad Temporal:**
-  * **Diccionarios:** Manejo del método `.get(clave, 0)` para conteos y acumulación de frecuencias sin disparar errores `KeyError`.
-  * **Listas y List Comprehensions:** Transformación y filtrado sintético en una sola línea con alta eficiencia y legibilidad.
-  * **Conjuntos (`set`):** Eliminación de elementos duplicados y optimización de comprobaciones de pertenencia (`item in set`).
-  * **Tuplas:** Agrupamiento de respuestas inmutables y retorno de múltiples salidas en funciones.
-* **Programación Funcional y Funciones de Orden Superior:**
-  * **`lambda`:** Funciones anónimas para operaciones directas (cálculo de potencias, restos con `%`, sumas paramétricas).
-  * **`map()`:** Transformaciones diferidas elemento a elemento y mapeo sincronizado en paralelo sobre dos o más listas (`map(lambda x, y: x - y, lista1, lista2)`).
-  * **`filter()`:** Extracción condicional de subconjuntos mediante evaluación de predicados booleanos.
-  * **`reduce()`:** Reducción de secuencias a un único valor escalar (cálculo de factoriales posicionales, diferencias acumuladas y productos continuos).
-* **Control de Excepciones y Robustez:**
-  * Captura diferenciada con bloques `try / except / else` para responder ante errores de tipo (`ValueError`) y aritméticos (`ZeroDivisionError`).
-  * Creación y lanzamiento de excepciones personalizadas (`class ListaVaciaError(Exception)`) para validar estructuras de entrada.
-* **Programación Orientada a Objetos (POO):**
-  * Modelado de entidades del mundo real mediante atributos de estado y métodos de mutación (`class Arbol`).
-  * Lógica transaccional segura con validaciones cruzadas entre múltiples instancias y control de saldos (`class UsuarioBanco`).
-* **Modularidad y Funciones Variádicas:**
-  * Desempaquetado dinámico posicional mediante `*args` para construir funciones despachadoras u orquestadoras (`procesar_texto`).
+* **Programación funcional (`map`, `filter`, `reduce`, `lambda`):** Ha sido una de las partes más interesantes para dejar atrás los bucles tradicionales y escribir transformaciones en una sola línea. El mayor reto aquí fue controlar los casos límite, como evitar fallos en `reduce` cuando recibe listas vacías o filtrar correctamente enteros descartando valores booleanos (`type(x) is int`).
+* **Manejo de excepciones personalizadas:** Implementación de bloques `try / except` para validar entradas de usuario (como divisiones por cero, edades fuera de rango o horas no válidas) y creación de errores propios como `ListaVaciaError`.
+* **Programación Orientada a Objetos (Clases `Arbol` y `UsuarioBanco`):** Diseño de atributos y métodos con validaciones internas para asegurar que la lógica de negocio se cumpla (por ejemplo, comprobar si un usuario tiene cuenta corriente activa y saldo suficiente antes de permitir una transferencia).
+* **Manipulación de texto y lógica matemática:** Procesamiento de cadenas palabra a palabra con `split()` para evitar reemplazos parciales no deseados y cálculo de áreas geométricas apoyándome en la librería estándar `math`.
 
 ## 📁 3. Estructura del Proyecto
 ```text
